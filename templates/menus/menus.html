@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="menu" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Our Menus</h2>
+                    <h4>Take Away &amp; Pick Up</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="menu-thumb">
+                    <img class="card-img-top" src="{% static 'images/menu-image1.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="orange">Name</h4>
+                        <hr>
+                        <div class="row py-2 text-secondary">
+                            <h6>Discription</h6>
+                            <hr>
+                            <div class="card-body">
+                                <a href="#" class="detail-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <!-- MENU THUMB 
+                    <div class="menu-thumb">
+                        <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
+                            <img src="{% static 'images/menu-image1.jpg' %}" class="img-responsive" alt="">
+
+                            <div class="menu-info">
+                                <div class="menu-item">
+                                    <h3>American Breakfast</h3>
+                                    <p>Tomato / Eggs / Sausage</p>
+                                </div>
+                                <div class="menu-price">
+                                    <span>$25</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    -->
+                    </div>
+                </div>
+            </div>
+</section>
+
+{% endblock %}
