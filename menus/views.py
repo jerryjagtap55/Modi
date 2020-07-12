@@ -1,9 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from .models import Menu
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'menus/menus.html')
 
-def menu(request):
-    return render(request, 'menus/menu.html')
+    menus = Menu.objects.all()
+
+    context = {
+        'menus' : menus,
+    }
+
+    return render(request, 'menus/menus.html', context)
+
+def menu(request, menu_id):
+    menu = get_object_or_404(Menu, pk=menu_id)
+
+    context = {
+        'menu' : menu,
+    }
+    return render(request, 'menus/menu.html', context)

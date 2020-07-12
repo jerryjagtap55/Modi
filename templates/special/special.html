@@ -1,6 +1,39 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Special -->
+<section id="menu" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Special Offers</h2>
+                    <h4>Nice &amp; Healthy</h4>
+                </div>
+            </div>
 
-<h1> Special Offers </h1>
+            <!--Special items-->
+            {% if special %} {% for special in special %}
+            <div class="col-md-4 col-sm-4">
+                <div class="menu-thumb">
+                    <img class="card-img-top" src="{{ special.photo.url }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="red">{{ special.name }}</h4>
+                        <hr>
+                        <div class="row py-2 text-secondary">
+                            <h6>{{ special.description }}</h6>
+                            <hr>
+                            <div class="card-body">
+                                <h5 class="red">Rs: {{ special.price }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} {% else %}
+            <div class="col-md-12">
+                <p>No Offer Avaliable</p>
+            </div>
+            {% endif %}
+        </div>
+</section>
+
 {% endblock %}

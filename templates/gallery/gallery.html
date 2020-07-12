@@ -1,6 +1,32 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-<h1> Gallery </h1>
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- Gallery-->
+<section id="menu" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2> Gallery</h2>
+                    <h4> Treasure box </h4>
+                </div>
+            </div>
+
+            {% if photo %} {% for gallery in photo %}
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <img class="card-img-top" src="{{ gallery.photo.url }}" alt="Gallery Images">
+                </a>
+            </div>
+            {% endfor %} {% else %}
+            <div class="col-md-12">
+                <p>No Photos are Avaliable at this Movement</p>
+            </div>
+            {% endif %}
+
+
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}

@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+
+<!--Menu of Cafe-->
 <section id="menu" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row">
@@ -8,41 +10,33 @@
                     <h4>Take Away &amp; Pick Up</h4>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
+
+            <!--Menu items-->
+            {% if menus %} {% for menu in menus %}
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="menu-thumb">
-                    <img class="card-img-top" src="{% static 'images/menu-image1.jpg' %}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ menu.photo.url}}" alt="Card image cap">
                     <div class="card-body">
-                        <h4 class="orange">Name</h4>
+                        <h4 class="orange">{{ menu.name }}</h4>
                         <hr>
-                        <div class="row py-2 text-secondary">
-                            <h6>Discription</h6>
+                        <div class="description">
+                            <h5>{{ menu.description }}</h5>
                             <hr>
                             <div class="card-body">
-                                <a href="#" class="detail-btn">Details</a>
+                                <a href="{% url 'menu' menu.id %}" class="detail-btn">Details</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <!-- MENU THUMB 
-                    <div class="menu-thumb">
-                        <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
-                            <img src="{% static 'images/menu-image1.jpg' %}" class="img-responsive" alt="">
-
-                            <div class="menu-info">
-                                <div class="menu-item">
-                                    <h3>American Breakfast</h3>
-                                    <p>Tomato / Eggs / Sausage</p>
-                                </div>
-                                <div class="menu-price">
-                                    <span>$25</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    -->
-                    </div>
                 </div>
             </div>
+            {% endfor %} {% else %}
+            <div class="col-md-12">
+                <p>No Menu Avaliable</p>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
 </section>
 
 {% endblock %}

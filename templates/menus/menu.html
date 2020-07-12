@@ -1,6 +1,32 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<!-- MENU-->
+<section id="menu" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <a href="{% url 'menus' %}" class="back-btn">Back To Menu</a>
+        <div class="row">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h1 class="display-4">{{ menu.name }}</h1>
+                        <h3 class="red">Rs: {{ menu.price }}</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="onemenu">
+                <img class="card-img-top" src="{{ menu.photo.url }}" alt="Card image cap">
+            </div>
+            <hr>
+            <div class="row py-2 text-secondary">
+                <h6>{{menu.description}}</h6>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 {% endblock %}

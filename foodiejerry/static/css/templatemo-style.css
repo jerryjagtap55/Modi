@@ -54,8 +54,41 @@ p {
     line-height: 24px;
 }
 
+.red {
+    color: #ce3232;
+}
+
+.onemenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
 .orange {
     color: #ff6500;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 40vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    object-fit: contain;
+}
+
+@media(min-width:768px) {
+    .card-img-top {
+        width: 100%;
+        height: 20vw;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        object-fit: contain;
+    }
+}
+
+.description {
+    padding: 8px;
 }
 
 
@@ -165,6 +198,15 @@ section {
      PRE LOADER              
 -----------------------------------------*/
 
+.back-btn {
+    background: #ce3232;
+    color: #f9f9f9;
+    font-size: inherit;
+    font-weight: normal;
+    padding: 10px 25px;
+    transition: 0.5s 0.2s;
+}
+
 .detail-btn {
     background: #ce3232;
     border-radius: 0;
@@ -178,6 +220,10 @@ section {
 }
 
 .detail-btn:hover {
+    background: #252525;
+}
+
+.back-btn:hover {
     background: #252525;
 }
 
@@ -345,7 +391,6 @@ section {
     border: 2px solid #d9d9d9;
     background: transparent;
     display: block;
-    -webkit-backface-visibility: visible;
     transition: opacity 200ms ease;
     border-radius: 30px;
 }

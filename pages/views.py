@@ -1,8 +1,16 @@
 from django.shortcuts import render
-
+from menus.models import Menu
+from special.models import Special
 # Create your views here.
 def index(request):
-    return render(request, 'pages/index.html')
+    menus = Menu.objects.all()
+    special = Special.objects.all()
+
+    context = {
+        'special' : special,
+        'menus' : menus,
+    }
+    return render(request, 'pages/index.html', context)
 
 
 def about(request):
