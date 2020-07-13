@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'menus.apps.MenusConfig',
     'gallery.apps.GalleryConfig',
     'special.apps.SpecialConfig',
+    'contact.apps.ContactConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,3 +134,10 @@ STATICFILES_DIRS = [
 #media folder settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#Email
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'jerry.jagtap5@gmail.com'
+EMAIL_HOST_PASSWORD = 'yzewpczizjcakotn'
+EMAIL_USE_TLS = True

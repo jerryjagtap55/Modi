@@ -5,7 +5,7 @@ from .models import Photo
 class PhotoAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'show')
     list_display_links = ('id', 'title')
-    list_editable = ('show',)
+    list_editable = ['show']
     list_per_page = 20 
 
 admin.site.register(Photo, PhotoAdmin)

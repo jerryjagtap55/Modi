@@ -6,7 +6,7 @@ from .models import Special
 
 def index(request):
 
-    special = Special.objects.all()
+    special = Special.objects.filter(show=True)
 
     context = {
         'special' : special,

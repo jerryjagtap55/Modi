@@ -6,7 +6,7 @@ from .models import Photo
 
 def index(request):
 
-    photo = Photo.objects.all()
+    photo = Photo.objects.filter(show=True)
 
     context = {
         'photo':photo

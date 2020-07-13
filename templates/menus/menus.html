@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% block title %} | Menu {% endblock %} {% load static %} {% block content %}
 
 <!--Menu of Cafe-->
 <section id="menu" data-stellar-background-ratio="0.5">
@@ -15,7 +15,9 @@
             {% if menus %} {% for menu in menus %}
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="menu-thumb">
-                    <img class="card-img-top" src="{{ menu.photo.url}}" alt="Card image cap">
+                    <a href="{% url 'menu' menu.id %}">
+                        <img class="card-img-top" src="{{ menu.photo.url}}" alt="Card image cap">
+                    </a>
                     <div class="card-body">
                         <h4 class="orange">{{ menu.name }}</h4>
                         <hr>

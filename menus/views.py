@@ -6,7 +6,7 @@ from .models import Menu
 
 def index(request):
 
-    menus = Menu.objects.all()
+    menus = Menu.objects.filter(show=True)
 
     context = {
         'menus' : menus,

@@ -3,8 +3,8 @@ from menus.models import Menu
 from special.models import Special
 # Create your views here.
 def index(request):
-    menus = Menu.objects.all()
-    special = Special.objects.all()
+    menus = Menu.objects.filter(show=True)
+    special = Special.objects.filter(show=True)
 
     context = {
         'special' : special,
